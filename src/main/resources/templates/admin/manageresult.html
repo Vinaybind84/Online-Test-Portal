@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+		<div class="row">
+			<h1>Manage Result</h1>
+			<div style="overflow:scroll;width:100%; height: 90vh;">
+				<table class="table table-border">
+					<thead class="table-danger">
+						<tr>
+							<th>Name</th>
+							<th> Email Address</th>
+							<th> Contact No</th>
+							<th> College/University</th>
+							<th> Course</th>
+							<th> Branch</th>
+							<th> Year</th>
+							<th> Total Marks</th>
+							<th> Get Marks</th>
+							<th> Delete</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="r:${rlist}">
+							<td th:text="${r.emailaddress}"></td>
+							<td th:text="${r.contactno}"></td>
+							<td th:text="${r.collegename}"></td>
+							<td th:text="${r.course}"></td>
+							<td th:text="${r.branch}"></td>
+							<td th:text="${r.year}"></td>
+							<td th:text="${r.totalmarks}"></td>
+							<td th:text="${r.getmarks}"></td>
+							<td>
+								<a th:href="@{manageresult/delete(emailaddress=${r.emailaddress})}"> 
+									<button class="btn btn-danger" onclick="return confirm('Are you sure want do delete ')"> Delete</button>
+									 </a>
+							</td>
+
+							
+						</tr>
+						
+						
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</section>
+	
+</body>
+
+</html>

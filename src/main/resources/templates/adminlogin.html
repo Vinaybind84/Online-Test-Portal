@@ -1,0 +1,46 @@
+<html  th:replace="~{base::layout(~{::section})}">
+  <head>
+    </head>
+  <body>
+  <section>
+	
+		<div class="row">
+			 <h1 class="text-center" style="color: blue;"> Admin login Form</h1>
+			 <form class="form-group" th:object="${dto}" method ="post">
+			<table class="table table-bordered" style="margin:auto; width: 60%;">
+				<tr>
+				 <td> USER ID<td>
+												
+					<input type="text" required class="form-control" placeholder="Enter your userid" th:field="${dto.userid}"/>
+												
+					</tr>
+				<tr>
+				<tr>
+					<td>PASSWORD</td>
+					<td>
+						<input type="password" th:field="${dto.password}"  placeholder="Enter your password" class="form-control" required/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div th:if="${msg}">
+							<p th:text="${msg}" style="color:red;"></p>
+						</div>
+					</td>
+					<td>
+						<button type="submit" class="btn btn-primary">login</button>
+					</td>
+					
+				</tr>
+				
+				
+			</table>
+				
+				
+			
+			</form>
+			
+			 </div>
+			 </section>
+			 </body>
+			 </html>

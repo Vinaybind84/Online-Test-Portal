@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" th:replace="base::layout(~{::section})">
+  <head>
+    </head>
+  <body>
+  
+	<section>
+		<div class="row">
+			 <h1 class="text-center">Enquiry form</h1>
+		<div th:if="${message}">
+			<p th:text="${message}" class="alert alert-sucess alert-dismissible"></p>
+				
+			</div>
+					 
+			 <form class="form-group" method="post" th:object="${dto}">
+				<table class="table table-bordered" style="margin:auto; width:60%">
+					
+					<tr>
+						<td>NAME</td>
+					
+			<td><input type="text" required class="form-control" placeholder="Enter your Name" th:field="${dto.name}"/></td>
+					
+					</tr>
+					<tr>
+					
+						<td>SELECT GENDER</td>
+					<td>
+						<input type="radio" required name="gender" class="form-check-input" value="male" th:field="${dto.gender}"/>male
+						<input type="radio" required name="gender" class="form-check-input" value="female" th:field="${dto.gender}"/>female
+						</td>						
+					</tr>
+					<tr>
+						<td>CONTACT NO.</td>
+						<td>
+							<input type="number" required class="form-control" placeholder="Enter your Contactno" th:field="${dto.contactno}"/>
+						</td>
+					</tr>
+				<tr>
+					<td>EMAIL-ADDRESS</td>
+					<td>
+						<input type="email" required class="form-control" placeholder="Enter your Emailaddress" th:field="${dto.emailaddress}"/>
+	</td>
+ 	</tr>
+	<tr>
+		<td>ENQUIRY TEXT</td>
+			<td>	
+				<textarea required class="form-control" th:field="${dto.enquirytext}"></textarea>
+			</td>
+	</tr>
+	
+	<tr>
+	<td></td>
+	<td>
+		<button type="submit" class="btn btn-primary">SUBMIT</button>
+	</td>
+		
+	</tr>		
+				</table>
+			 </form>
+		</div>	
+	</section>	
+  </body>
+</html>

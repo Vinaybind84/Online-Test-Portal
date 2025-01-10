@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" th:replace="student/studentbase::layout(~{::section})">
+
+<head>
+
+</head>
+
+<body>
+	<section>
+		<div class="row m-2 card shadow">
+			<div class="col-sm-12">
+				<div class="row mt-2 mb-2">
+					<h3 style="color: #ef662f; font-weight: bold; margin: 4px;">Important Intstructions</h3>
+				</div>
+				<input type="hidden" id="jsonData" th:value="${json}" />
+				<div class="container-fluid px-5">
+					<div class="row">
+						<div class="col-sm-6 text-center">
+							<b>Total Alloted Time :</b>
+							<label th:text="${tt}" id="TTime" class="form-lable"></label>
+						</div>
+						<div class="col-sm-6 text-center">
+							<b>Total Alloted Question :</b>
+							<label th:text="${tq}" id="TQuestion" class="form-lable"></label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 p-4" style="background-color: orangered;">
+							<span style="color: white;">
+								<lable id="lblqno" style="font-size: 23px; font-weight: 600;"></lable>
+							</span>
+							<span style="color: white;">
+								<lable id="lblquestion" style="font-size: 23px; font-weight: 600;"></lable>
+							</span>
+
+
+						</div>
+					</div>
+					<div class="row mt-4">
+						<div class="col-sm-12 p-1">
+							<div class="alert alert-secondary px-5 pt-4">
+								<h6>
+									<input type="radio" id="a" class="form-check-input" name="option" value="A">
+									&nbsp;&nbsp;<label class="form-lable" style="font-size: 20px;" for="A"
+										id="lblA"></label>
+								</h6>
+							</div>
+
+
+						</div>
+					</div>
+					<div class="row mt-4">
+						<div class="col-sm-12 p-1">
+							<div class="alert alert-secondary px-5 pt-4">
+								<h6>
+									<input type="radio" id="b" class="form-check-input" name="option" value="B">
+									&nbsp;&nbsp;<label class="form-lable" style="font-size: 20px;" for="B"
+										id="lblB"></label>
+								</h6>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="row mt-4">
+						<div class="col-sm-12 p-1">
+							<div class="alert alert-secondary px-5 pt-4">
+								<h6>
+									<input type="radio" id="c" class="form-check-input" name="option" value="C">
+									&nbsp;&nbsp;<label class="form-lable" style="font-size: 20px;" for="C"
+										id="lblC"></label>
+								</h6>
+							</div>
+
+
+						</div>
+					</div>
+
+
+					<div class="row mt-4">
+						<div class="col-sm-12 p-1">
+							<div class="alert alert-secondary px-5 pt-4">
+								<h6>
+									<input type="radio" id="d" class="form-check-input" name="option" value="D">
+									&nbsp;&nbsp;<label class="form-lable" style="font-size: 20px;" for="D"
+										id="lblD"></label>
+								</h6>
+							</div>
+
+
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-12 mt-3">
+							<span style="font-size: 18px; font-weight: 600;">
+								Left : <label id="timer" style="font-size: 18px; font-weight: 600;"></label>
+
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 mt-3">
+							<button type="button" id="ButtonNext" class="btn px-5 text-white"
+								style="background-color: orangered;">Next</button>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/exam.js" type="text/javascript"></script>
+	</section>
+</body>
+
+</html>

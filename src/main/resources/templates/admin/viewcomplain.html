@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+		<div class="row">
+			<h1 class="text-center text-primary fw-bold">Manage Complaint</h1>
+			<div style="overflow:scroll;width:100%;">
+				<table class="table table-border">
+					<thead class="table-danger">
+						<tr>
+							<th> Name</th>
+							<th> Enrollment No</th>
+							<th> Contact No</th>
+							<th> Email Address</th>
+							<th>Complain Subject</th>
+							<th> Complain Message</th>
+							<th> Complain Date</th>
+							<th>
+								Delete
+							</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="c:${clist}">
+							<td th:text="${c.name}"></td>
+							<td th:text="${c.enrollmentno}"></td>
+							<td th:text="${c.contactno}"></td>
+							<td th:text="${c.emailaddress}"></td>
+							<td th:text="${c.subject}"></td>
+							<td th:text="${c.message}"></td>
+							<td th:text="${c.regdate}"></td>
+							<td>
+								<a th:href="@{viewcomplain/delete(resid=${c.resid})}"><button onclick="return confirm ('Are you sure want to detele?')"class="btn btn-danger"> Delete</button>
+																</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</section>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>

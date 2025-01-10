@@ -1,0 +1,52 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+	<head>
+		</head>
+		<body>
+			
+			<section>
+				<div class="row">
+				  <h1 class="text-center text-primary fx-bold "></h1>
+				  <div style="overflow: scroll; width: 100%; height: 90vh;">
+					<table class="table table-bordered">
+						<thead class="table-danger">
+							<tr>
+								<th>Name</th>
+								<th>Enrollment no</th>
+								<th>Contact no</th>
+								<th>Email Address</th>
+								<th>Feedback Subject</th>
+								<th>Feedback Message</th>
+								<th>Feedback Date</th>
+								<th>
+									<a href="#">
+										<button type="button" class="btn btn-danger">Delete</button>
+									</a>
+								</th>
+							</tr>
+							
+				
+						</thead>
+						</tbody>
+						<tr th:each="f:${flist}"> 
+							<td th:text="${f.name}"></td>
+							<td th:text="${f.enrollmentno}"></td>
+							<td th:text="${f.contactno}"></td>
+							<td th:text="${f.emailaddress}"></td>
+							<td th:text="${f.subject}"></td>
+							<td th:text="${f.message}"></td>
+							<td th:text="${f.regdate}"></td>
+							<td>
+								<a href="#">
+								<button type="button" class="btn btn-danger">Delete</button>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</div>
+				</div>
+			</section>
+			
+			
+			</body>
+	</html>

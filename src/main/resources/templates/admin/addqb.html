@@ -1,0 +1,84 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+<head>
+	
+</head>
+<body>
+	<section>
+		<h1 style="color:orange; text-align: center;">
+			Add Question 
+		</h1>
+		<div th:if="${msg}">
+			<p th:text="${msg}" style="color: green; text-align: center;"></p>
+		</div> n
+		<form class="form-group" method="post" th:object="${dto}">
+			<table class="table table-bordered" style="width:80%; margin:auto">
+				<tr>
+					<td> Select Year</td>
+					<td>
+						<select class="form-control" th:field="${dto.year}"/>
+						<option>---Select Year---</option>
+						<option value="1st">1st</option>
+						<option value="2nd">2nd</option>
+						<option value="3rd">3rd</option>
+						<option value="4th">4th</option>	
+						</select>
+			      		</td>
+				</tr>
+				<tr>
+					<td>Enter Question</td>
+					<td>
+						<textarea class="form-control" th:field="${dto.question}" required></textarea>
+					</td>
+				</tr>
+				<tr>
+									<td>A</td>
+									<td>
+										<textarea class="form-control" th:field="${dto.a}" required></textarea>
+									</td>
+								</tr>
+								<tr>
+													<td>B</td>
+													<td>
+														<textarea class="form-control" th:field="${dto.b}" required></textarea>
+													</td>
+												</tr>
+												
+												<tr>
+																	<td>C</td>
+																	<td>
+																		<textarea class="form-control" th:field="${dto.c}" required></textarea>
+																	</td>
+																</tr>
+																
+																<tr>
+																					<td>d</td>
+																					<td>
+																						<textarea class="form-control" th:field="${dto.d}" required></textarea>
+																					</td>
+																				</tr>
+																				
+																				<tr>
+																									<td>Correct option</td>
+																									<td>
+																										<select class="form-control" th:field="${dto.correct}">
+																											<option value="A">A</option>
+																											<option value="B">B</option>
+																											<option value="C">C</option>
+																											<option value="D">D</option>
+																										</select>
+																									</td>
+																								</tr>
+																								
+																								<tr>
+																									<td></td>
+																									<td>
+																										<button type="submit" class="btn btn-success">Add Question</button>
+																									</td>
+																								</tr>
+								
+			</table>
+			
+		</form>
+	</section>
+</body>
+</html>

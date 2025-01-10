@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" th:replace="base::layout(~{::section})">
+  <head>
+    </head>
+  <body>
+  
+	<section>
+		<div class="row">
+			<h2 class="form-group" style="color: blue";> Student Login</h2>
+		<fo class="form-group" th:object="${dto}" method="post">
+	     <table class="table table-bordered" style="margin: auto;width: 60%;">
+			
+		 </table>
+			<tr> 
+			<td> Enter User Id(Email Id)</td>
+			<input type="text" th:field="${dto.email id}" class="form.control" required/>
+			</tr>
+			
+			<tr> 
+			  <td> Enter Password</td>
+			  <input type="password" th:field="${dto.password}" class="form.control" required/>
+				</tr>
+			
+				<tr>
+					<td></td>
+					<td>
+						<button type="submit" class="btn btn-primary">Login</button>
+					</td>
+				</tr>
+			</form>
+				
+				
+				</div>
+	</section>
+	</body>
+	<html></html>

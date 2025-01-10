@@ -1,0 +1,48 @@
+<html th:replace="student/studentbase::layout(~{::section})">
+	<head>
+		
+	</head>
+	<body>
+		<section>
+			<div class="row">
+				<h2 class="text-center" style="color:blue">Give Response</h2>
+				<form class="form-group" th:object="${dto}" method="post">
+					<table class="table table-bordered" style="margin: auto;width: 60%;">
+					<tr>
+						<td>
+							Select Response Type:
+						</td>
+						<td>
+							<select class="form-control bg-light" th:field="${dto.responsetype}">
+								<option value="select">--select--</option>
+								<option value="select">Complaint</option>
+								<option value="select">Feedback</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Enter Response Subject:</td>
+						<td>
+							<input type="text" class="form-control bg-light" th:fields="${dto.subject}" required/>
+						</td>
+					</tr>
+					<tr>
+						<td>Enter Response Message:</td>
+						<td>
+							<textarea required class="form-control bg-light" th:field="${dto.message}"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</td>
+					</tr>
+					</table>
+				</form>
+			</div>
+		</section>
+	</body>
+</html>

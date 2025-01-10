@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" th:replace="admin/adminbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+		<div class="row">
+			<div style="overflow:scroll;width:100%; height: 90vh;">
+				<table class="table table-border">
+					<thead class="table-danger">
+						<tr>
+							<th>Name</th>
+							<th>Gender</th>
+							<th>Contactno</th>
+							<th>Emailaddress</th>
+							<th>enquirytext</th>
+							<th>posted date<th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="e:${elist}">
+							<td th:text="${e.name}"></td>
+							<td th:text="${e.gender}"></td>
+							<td th:text="${e.contactno}"></td>
+							<td th:text="${e.emailaddress}"></td>
+							<td th:text="${e.enquirytext}"></td>
+							<td th:text="${e.posteddate}"></td>
+							
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</section>
+	
+</body>
+
+</html>

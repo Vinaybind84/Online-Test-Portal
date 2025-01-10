@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width>, initial-scale=1.0">
+	<title>ONLINE TEST PORTAL</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+
+	<link href="css/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="css/bootstrap/css/style.css">
+</head>
+
+<body>
+
+	<!--header start-->
+	<div class="container-fluid" style="background-color: rgba(244, 242, 242, 0.868);">
+		<div class="row fs-3">
+			<div class="col-sm-12">
+				
+			
+				<i class="fa-brands fa-facebook" style="color:#EF662F;"></i>
+				<i class="fa-brands fa-square-twitter" style="color:#EF662F;"> </i>
+				<i class="fa-brands fa-youtube" style="color:#EF662F;"></i>
+				<i class="fa-brands fa-google-plus" style="color:#EF662F;"></i>
+				<i class="fa-brands fa-linkedin" style="color: #EF662F;"></i>
+				<i class="fa-brands fa-square-instagram" style="color:#EF662F;"></i>
+			</div>
+			
+			</div>
+			</div>
+	
+	<!--header end-->
+	<!--main header Start-->
+	<div class="container-fluid sticky-top bg-light">
+		<div class="row shadow">
+			<div class="col-sm-1 ps-4 ">
+				<img src="images/spi.png" alt=" " height="95">
+			</div>
+			<div class="col-sm-9" mt-2>
+				<h5 class="mt-3 p-3" style=" font-weight:800;font:size 18px; color: #EF662F;"> Do Your Summer Internship
+					under the guidance of Industry Experts from IIT Kanpur and IET Lucknow
+				</h5>
+			</div>
+			<div class="col-sm-2 mt-4 text-end ">
+				<a href="/register">
+					<button class="p-2 px-3" style="color:white; background-color: #EF662F;" height="45px;width:160px;">
+						<i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp; Apply now</button>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--navbar start-->
+	<div class="row text-primary py-2">
+		<div class="col-sm-12 p-0" style="background-color: #EF662F;">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container-fluid bg-primary; py-1">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link active fw-bold" aria-current="page" href="/index"><i
+										class="fa-solid fa-house fa-beat"></i> Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active fw-bold" href="/aboutus"> <i
+										class="fa-solid fa-address-card fa-fade"></i>AboutUs</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active fw-bold" href="/contactus"> <i
+										class="fa-solid fa-phone fa-bounce"></i>ContactUs</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active fw-bold" href="/registration"> <i
+										class="fa-solid fa-registered fa-shake"></i>Register</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle fw-bold text-black " href="#" id="navbarDropdownMenuLink"
+									role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									<i class="fa-spin fa fa-key"></i>Login
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<li><a class="dropdown-item  fw-bold text-black" href="/studentlogin"
+											target="_blank">Student Login</a></li>
+									<li><a class="dropdown-item  fw-bold text-black" href="adminlogin" target="_blank">
+											Admin Login</a></li>
+																</ul>
+							</li>
+
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!--navbar end-->
+
+	<div class="row" th:replace="${content}"></div>
+	<!-- footer start -->
+	<div class="container-fluid">
+		<div class="row mt-5 pt-5" style="background:linear-gradient(#f8781f 60%, rgb(255, 213, 0));">
+			<div class="col-sm-12 mx-auto">
+				<div class="row mt-4">
+					<div class="col-sm-4">
+						<h3 style="color:black; text-align:left;">Address</h3>
+						<p>
+							Head Office: Softpro Tower <br>
+							Near New Hanuman Temple, Kapoorthala <br>
+							Aliganj, Lucknow (UP)-226006
+						</p>
+						<p>
+							Branch Office: Softpro House <br>
+							3/213, Sector J, Jankipuram <br>
+							Kursi Road, Lucknow
+						</p>
+					</div>
+					<div class="col-sm-4">
+						<h3 style="color:black; text-align:left;">Help & Support</h3>
+						<p>
+							If you need immediate assistance or have any further questions, feel free to call us
+							at given number below and you can also send me a mail on the given mail id.
+						</p>
+						<h4 class="text-dark" style="font-weight: 700;"> +91 7080102006</h4>
+						<h4 class="text-dark"> +91 7080462022</a></h4>
+						<h4 class="text-dark"> +91 7080422022</a></h4>
+					</div>
+					<div class="col-sm-4">
+						<img src="images/footer.png" height="200px" class="card-img-top p-2" />
+					</div>
+				</div>
+			</div>
+			<div class="row mx-auto mt-5 shadow-lg ">
+				<div class="col-sm-12 py-2">
+					<h5 class="text-center"><b>
+							© Copyright 2024 Designed & Developed By Ajeet Kumar | Softpro India Computer Technologies
+							(P) Ltd.
+						</b></h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Footer -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+
+</html>
+</body>

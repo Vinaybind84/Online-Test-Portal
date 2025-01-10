@@ -1,0 +1,62 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+<head>
+</head>
+<body>
+	<section>
+		<div class="row">
+			<div class="col-sm-10 mx-auto">
+				<h1>Student Information</h1>
+				<div th:if="${msg}">
+					<p th:text="${msg}" class="text-danger fs-5"></p>
+				</div>
+			</div>
+			<h1 class="text-center text-primary fx-bold "></h1>
+							  <div style="overflow: scroll; width: 100%; height: 90vh;">
+
+			<table class="table table-bordered">
+				<thead class="table-danger">
+					<tr>
+					<th>Name</th>
+					<th>Enrolllment no.</th>
+					<th>Email address</th>
+					<th>Whatsapp no.</th>
+					<th>CoLLege/University</th>
+					<th>Course</th>
+					<th>Branch</th>
+					<th>Year</th>
+					<th>Traning Mode</th>
+					<th>Traning Location</th>
+					<th>Resgistration Date</th>
+					<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr th:each="s:${slist}">
+						
+						<td th:text="${s.name}"></td>
+						<td th:text="${s.enrollmentno}"></td>
+						<td th:text="${s.emailaddress}"></td>
+						<td th:text="${s.whatsappno}"></td>
+						<td th:text="${s.collegename}"></td>
+						<td th:text="${s.course}"></td>
+						<td th:test="${s.branch}"></td>
+						<td th:text="${s.year}"></td>
+						<td th:text="${s.traningmode}"></td>
+						<td th:text="${s.traninglocation}"></td>
+						<td th:text="${s.regdate}"></td>
+						<td>
+							<a th:href="@{viewstudent/delete(email=${s.emailaddress})}">
+								<button onclick="return confirm('Are you sure want to delete')" class="btn btn-danger">Delete</button>
+								
+							</a>
+							
+						</td>
+						</tr>
+				</tbody>
+				
+			</table>
+		</div>
+	</section>
+</body>
+</html>

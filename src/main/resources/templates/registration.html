@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" th:replace="base::layout(~{::section})">
+  <head>
+    </head>
+  <body>
+  
+	<section>
+		<div class="row">
+			<div class="col-sm-10 mx-auto"> 
+			 <h1 class="text-center fw-bold text-primary">STUDENT REGISTRATION</h1>
+		<div th:if="${message}">
+			<p th:text="${message}" class="alert alert-sucess alert-dismissible"></p>
+			</div>
+			  </div>
+			
+			 <div class="col-sm-10 mx-auto">
+			 <form class="form-group" method="post" th:object="${dto}">
+				<table class="table table-bordered" style="margin:auto;width:60%">
+					
+					<tr>
+						<td>ENROLLMENT NO.</td>					
+			   <td>
+				   <input type="text" th:field="${dto.enrollmentno}" required class="form-control" placeholder="Enter your Enrollment"/></td>
+					</tr>
+					
+					<tr>
+						<td>NAME</td>
+			    <td>
+				   <input type="text" th:field="${dto.name}" required class="form-control" placeholder="Enter your Name"/></td>						
+					</tr>
+					
+					
+						<td>CONTACT NO.</td>
+						<td>
+							<input type="number" th:field="${dto.contactno}" required class="form-control" placeholder="Enter your Contactno" /></td>
+					</tr>
+					<tr>
+					     <td>WHATSAPP NO.</td>
+						<td>
+							<input type="number" th:field="${dto.whatsappno}" required class="form-control" placeholder="Enter your Whatsappno" /></td>
+					     </tr>
+						 
+				  <tr>
+					   <td>E-MAIL ADDRESS</td>
+					    <td>
+						<input type="email" th:field="${dto.emailaddress}" required class="form-control" placeholder="someone@gmail.com" /></td>
+ 	              </tr>
+				
+				<tr>
+					    <td>PASSWORD</td>
+						<td>
+						<input type="password" th:field="${dto.password}" required class="form-control" placeholder="Enter your Password"/></td>
+				  </tr>
+			
+				  <tr>
+				  		<td>COLLEGE NAME</td>
+				  		<td>
+				  		<input type="text" th:field="${dto.collegename}" required class="form-control" placeholder="Enter your College Name"/></td>
+				  </tr>  
+				  
+					 <tr>
+						<td>COURSE</td>
+						<td>
+					<select class="form-control" th:field="${dto.course}"/>
+						<option>---Select Course---</option>
+						<option value="Diploma">DIPLOMA</option>
+						<option value="B.Tech">B.TECH</option>
+						<option value="M.Tech">M.TECH</option>
+						<option value="MBA">MBA</option>
+					</select>
+				<td>
+					  
+					 </tr>
+				  
+					 
+					 	<td>BRANCH</td>
+							<td>
+					 <select class="form-control"th:field="${dto.branch}"/>
+					 <option>---Select Branch---</option>
+						<option value="Computer Science">COMPUTER SCIENCE</option>
+						<option value="MechanicalL">MECHANICAL</option>
+						<option value="CIVIL">CIVIL</option>
+						<option value="Electrical">ELECTRICAL</option>
+						</select>
+						</td>
+						</tr>
+					 </tr>
+					 
+					 <tr>
+						<td>YEAR</td>
+						<td>
+						<select class="form-control" th:field="${dto.year}"/>
+							<option>---Select Year---</option>
+							<option value="1st">1st</option>
+							<option value="2nd">2nd</option>
+							<option value="3rd">3rd</option>
+							<option value="4th">4th</option>	
+							</select>
+							</td>
+					 </tr>
+				  
+					 <tr>
+					 	<td>HIGH-SCHOOL MARKS</td>
+					 	<td>
+					 	<input type="number" th:field="${dto.highschool}"required class="form-control" placeholder="10th percentage" /></td>
+					 </tr>
+						
+					<tr>
+						<td>INTERMEDIATE MARKS</td>
+						<td>
+						<input type="number" th:field="${dto.intermediate}"required class="form-control" placeholder="12th percentage"/></td>
+					 </tr>
+					 
+					 <tr>
+					 	<td>AGGGREGATE MARKS</td>
+					 	<td>
+					 	<input type="number" th:field="${dto.aggregatemarks}"required class="form-control"  placeholder="Aggregatemarks Percentage"/></td>
+					  </tr>
+					  
+					<tr>
+						<td>TRANING MODE </td>
+						<td>
+						<select class="form-control"th:field="${dto.traningmode}"/>
+							<option>---Select Mode---</option>
+							<option value="Online">Online</option>
+							<option value="Offline">Offline</option>
+							</select>
+						</td>
+						
+					</tr>
+					
+					<tr>
+					    <td>TRANING LOCATION</td>
+						<td>
+			            <select class="form-control" th:field="${dto.traninglocation}"/>
+							<option>---Select Location---</option>
+							<option value="Softpro Jankipuram Lucknow">Softpro Jankipuram Lucknow</option>
+							<option value="Softpro Academy Gomtinagar Lucknow">Softpro Academy Gomtinagar Lucknow</option>
+							<option value="ITS Campus Noida">ITS Campus Noida</option>
+							<option value="Online Mode">Online Mode</option>
+							</select>	
+						</td>
+				   </tr>
+				   
+				   <tr>
+				   	    <td>REGISTRATION DATE</td>
+				   		<td>
+		 		   	    <input type="number" th:field="${dto.regdate}" required class="form-control" /></td>
+				   	 </tr>
+										 				  				  
+				  
+	
+	
+	<tr>
+	<td></td>
+	<td>
+		<button type="submit" class="btn btn-primary">submit</button>
+	</td>
+		
+	</tr>		
+				</table>
+			 </form>
+			 </div>
+		</div>	
+	</section>	
+  </body>
+</html>
